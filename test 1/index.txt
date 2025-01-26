@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NSS College of Engineering</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    header {
+      background-color: white;
+      padding: 20px 0;
+      margin-bottom: 30px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      color: red;
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      padding: 20px;
+    }
+
+    .icon {
+      text-align: center;
+    }
+
+    .icon img {
+      width: 120px;
+      height: 120px;
+      border: 2px solid black;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .icon img:hover {
+      transform: scale(1.1);
+    }
+
+    .icon p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>NSS College of Engineering Akathethara</h1>
+  </header>
+
+  <!-- Links -->
+  <div class="container">
+    <!-- Student Icon with Link -->
+    <div class="icon">
+      <a href="student.html"> <!-- Links to student.html -->
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Student Icon">
+        <p>Student</p>
+      </a>
+    </div>
+
+    <!-- Teacher Icon with Link -->
+    <div class="icon">
+      <a href="teacher.html"> <!-- Links to teacher.html -->
+        <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png" alt="Teacher Icon">
+        <p>Teacher</p>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Search</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      color: #f04c4c;
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .search-container {
+      margin: 20px auto;
+      max-width: 500px;
+    }
+
+    .search-container input {
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .search-container button {
+      padding: 10px 15px;
+      background-color: #f04c4c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .search-container button:hover {
+      background-color: #e63939;
+    }
+
+    .search-container button:active {
+      transform: scale(0.98);
+    }
+
+    .table-container {
+      margin-top: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    table th, table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    table th {
+      background-color: #f04c4c;
+      color: white;
+    }
+
+    .status {
+      font-weight: bold;
+    }
+
+    .status.available {
+      color: green;
+    }
+
+    .status.unavailable {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Teacher Search</h1>
+  </header>
+
+  <!-- Search Section -->
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Search for a teacher by name" autofocus>
+    <button onclick="searchTeacher()">Search</button>
+  </div>
+
+  <!-- Results Table -->
+  <div class="table-container">
+    <table id="results-table">
+      <thead>
+        <tr>
+          <th>Teacher Name</th>
+          <th>Department</th>
+          <th>Availability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Results will be dynamically inserted here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Function to search for a teacher
+    function searchTeacher() {
+      const input = document.getElementById('search-input').value.trim();
+      const tableBody = document.getElementById('results-table').querySelector('tbody');
+
+      // Clear previous results
+      tableBody.innerHTML = '';
+
+      // Fetch data from backend (API endpoint)
+      fetch(`/api/faculty/search?name=${input}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.length > 0) {
+            data.forEach(teacher => {
+              const row = document.createElement('tr');
+
+              const nameCell = document.createElement('td');
+              nameCell.textContent = teacher.name;
+
+              const deptCell = document.createElement('td');
+              deptCell.textContent = teacher.department;
+
+              const statusCell = document.createElement('td');
+              statusCell.textContent = teacher.available ? 'Available' : 'Not Available';
+              statusCell.className = `status ${teacher.available ? 'available' : 'unavailable'}`;
+
+              row.appendChild(nameCell);
+              row.appendChild(deptCell);
+              row.appendChild(statusCell);
+
+              tableBody.appendChild(row);
+            });
+          } else {
+            // Display "No results found" if no matches
+            const noResultsRow = document.createElement('tr');
+            const noResultsCell = document.createElement('td');
+            noResultsCell.textContent = 'No matching teachers found.';
+            noResultsCell.colSpan = 3;
+            noResultsCell.style.textAlign = 'center';
+
+            noResultsRow.appendChild(noResultsCell);
+            tableBody.appendChild(noResultsRow);
+          }
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    }
+  </script>
+
+</body>
+</html>
