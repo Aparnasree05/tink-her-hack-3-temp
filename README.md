@@ -1,39 +1,32 @@
-# [Project Name] 🎯
+# find_my_guru 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: BINARY BRAINS
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: APARNA B - NSS COLLEGE OF ENGINEERING.
+- Member 2: ARCHANARAJ -  NSS COLLEGE OF ENGINEERING.
+- Member 3: DANNIA SAMSON - NSS COLLEGE OF ENGINEERING.
 
 ### Hosted Project Link
 [mention your project hosted project link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+The Find My Guru webpage is a platform where users can search for faculty members by name or department and view their details in a table format, including name, department, availability (with color-coded status: green for available, red for unavailable), and current location (e.g., HOD Room, Labs). It offers a user-friendly interface with dynamic search functionality, helping students or others quickly locate and connect with teachers.
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+The problem is to develop a web-based system that allows users to search for faculty members by name or department, view their availability and location in real-time, and easily navigate through the available faculty information. The goal is to provide a streamlined, efficient way for students and staff to locate and connect with teachers based on their availability and departmental allocation.
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+The solution is a web application that enables users to search for faculty members by name or department and display their details, including availability (color-coded as green for available and red for unavailable), department, and current location (e.g., HOD Room, Labs). The system offers a dynamic search feature, presenting the results in a table format, and is designed to be accessible, user-friendly, and responsive, helping students and staff easily locate and interact with faculty based on their real-time availability.
 
 ## Technical Details
+
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
-
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+- PYTHON,MYSQL,HTML
 
 ### Implementation
 For Software:
@@ -47,14 +40,8 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
@@ -84,16 +71,11 @@ For Hardware:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
-
+https://youtu.be/8dF3d-kFsQY?si=bz55h6E-LpMRJdCN
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+APARNA B:Main page design, navigation links, and overall layout styling:index.html
+ARCHANARAJ:Login pages for students and teachers with form validation and styling:student.html, teacher.html
+DANNIA SAMSON:Teacher search feature, availability management, live time, and calendar integration:teacher_search.html
 
 ---
 Made with ❤️ at TinkerHub
